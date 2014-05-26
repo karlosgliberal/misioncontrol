@@ -1,6 +1,6 @@
 #include "FastLED.h"
 
-#define NUM_LEDS 25
+#define NUM_LEDS 65
 #define DATA_PIN 2
 #define CLOCK_PIN 3
 
@@ -34,7 +34,7 @@ void serialEvent() {
        Serial.println(inputString);
        int valorEncendido = inputString.toInt();
        Serial.println(valorEncendido);
-       leds[valorEncendido] = CHSV(255, 255, 255);
+       leds[valorEncendido] = CRGB::Blue;
        FastLED.show();
        inputString = "";
        delay(30); 
